@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <link rel="stylesheet" href="style.css">
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <title>card</title>
+
+</head>
+
+<body>
+    <!--     <canvas id="mycanvas" width="500px" heigth="500px">the browser isn't supported Canvas</canvas>
+    <script src="canvas.js"></script> -->
+
+    <div class="hand">
+
+        <div class="card suitspades">
+            <header>
+                <ul class="suit">
+
+                    <li class="value">A</li>
+                    <li>&spadesuit;</li>
+
+                </ul>
+            </header>
+            <footer>
+                <ul class="suit">
+
+                    <li class="value">A</li>
+                    <li>&spadesuit;</li>
+
+                </ul>
+            </footer>
+            <section class="content">
+                <ul>
+                    <li class="origin">那么多院士、科学家都支持中医，你是个什么东西！</li>
+                    <li class="analysis">此言论犯了最典型的「可疑因谬误」(questionable cause fallacy)，即在两个事件之间建立了虚假的因果关系。事实上，人类仅凭自身的生物学特性和一些原始的文化习性就可以代代繁衍，医学实践并非必需。类似说法还有很多，比如「都是因为你夏天没给孩子用三伏贴，她才一直生病」。
+                    </li>
+                    <li class="refute">外国人没有中医，是怎么活下来的？苍蝇、老鼠没有蝇医、鼠医，又是怎么活下来的？</li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="card suitclubs">
+            <header>
+                <ul class="suit">
+
+                    <li class="value">A</li>
+                    <li>&clubsuit;</li>
+
+                </ul>
+            </header>
+            <footer>
+                <ul class="suit">
+
+                    <li class="value">A</li>
+                    <li>&clubsuit;</li>
+
+                </ul>
+            </footer>
+            <section class="content">
+                <ul>
+                    <li class="origin">中医糊糊涂涂治好了病，西医清清楚楚瞧不好病。</li>
+                    <li class="analysis">此言论通过诱导用词，让人以为中医能治病。然而，疗效的检验需要遵循「足够样本、随机、对照、盲法、多中心」等一系列科学原则。以这些原则衡量，对很多疾病来说，除去医药以外因素的影响，中医并无有效治疗方法。泛泛说中医能治病，是支持中医的言论中最常见的「虚假前提」(false premise)。
+                    </li>
+                    <li class="refute">不不不，中医糊糊涂涂让你上当受骗，现代医学清清楚楚让你免受欺骗。</li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="card suithearts">
+            <header>
+                <ul class="suit">
+
+                    <li class="value">A</li>
+                    <li>&heartsuit;</li>
+
+                </ul>
+            </header>
+            <footer>
+                <ul class="suit">
+
+                    <li class="value">A</li>
+                    <li>&heartsuit;</li>
+
+                </ul>
+            </footer>
+            <section class="content">
+                <ul>
+                    <li class="origin">中医和西医各有各的好处，为什么非要捧西医踩中医？</li>
+                    <li class="analysis">在当前语境下，中医作为传统医学的代表，与之对立的是现代医学。现代医学是全人类智慧的结晶，既有西方人的贡献又有中国人的贡献。用「西医」称呼现代医学，企图把普世的现代医学塑造为一种外集团的文化属性，这叫「诱导用词」(loaded words)，是狭隘民族主义的常用话术。
+                    </li>
+                    <li class="refute">我们支持的是现代医学，现代医学才不分中西；你听说过高等数学分中国高等数学和西方高等数学吗？</li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="card suitdiamonds">
+            <header>
+                <ul class="suit">
+
+                    <li class="value">A</li>
+                    <li>&diamondsuit;</li>
+
+                </ul>
+            </header>
+            <footer>
+                <ul class="suit">
+
+                    <li class="value">A</li>
+                    <li>&diamondsuit;</li>
+
+                </ul>
+            </footer>
+            <section class="content">
+                <ul>
+                    <li class="origin">我去年腰疼，去看西医没治好，老中医给贴了个膏药，又按摩了之后就好了，所以我支持中医。</li>
+                    <li class="analysis">这种以亲身经历替中医辩护的言论，犯的是「轶事谬误」(anecdotal fallacy)，即用生动鲜活的个例来论证中医的有效性。轶事谬误是人类先天心智欠缺统计学思维的主要表现。在科学上，个案在绝大多数情况下不能说明问题，只有一定数量的样本的统计结果才可能有意义。
+                    </li>
+                    <li class="refute">如果你确诊了百分之百死亡的狂犬病，然后真的被治好了，那么用个例说事还算合理；就得了个腰疼，那点个人经验就别太当真了吧。</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        var fitContent = $(function() {
+                var content = $(".card .content");
+                content.each(function(_, e) {
+                    var origin = $(e).find(".origin");
+                    var refute = $(e).find(".refute");
+                    if (origin.text().length > 24) {
+                        origin.css("font-size", 8);
+                    }
+                    if (refute.text().length > 24) {
+                        refute.css("font-size", 7);
+                    }
+                })
+            })
+            /*         var addCards = $(function(value, suit, origins, analyse, refutes) {
+                        var div = $("<div></div>");
+                        $("div.hand").append(div);
+                        div.addClass("card").addClass("suitdiamonds");
+
+                        var header = $("<header></header>");
+                        var footer = $("<footer></footer>");
+
+                        var ulsuit = $("<ul></ul>");
+                        ulsuit.addClass("suit");
+                        var livalue = $("<li></li>");
+                        var lisuit = $("<li></li>");
+                        livalue.addClass("value").text(value);
+                        lisuit.html(suit);
+                        var headul = ulsuit.append(livalue).append(lisuit);
+                        var footul = headul.clone(true);
+
+                        header.append(headul);
+                        footer.append(footul);
+
+                        var section = $("<section></section>");
+                        section.addClass("content");
+
+                        var sectionul = $("<ul></ul>");
+
+                        var origin = $("<li></li>");
+                        origin.addClass("origin");
+                        origin.text(origins);
+
+                        var analysis = $("<li></li>");
+                        analysis.addClass("analysis");
+                        analysis.text(analyse);
+
+                        var refute = $("<li></li>");
+                        refute.text(refutes);
+                        refute.addClass("refute");
+
+                        sectionul.append(origin).append(analysis).append(refute);
+                        section.append(sectionul);
+
+                        div.append(header).append(section).append(footer);
+
+                    })
+                    addCards("k", "&diamondsuit;", "原文", "fenxi", "fanbo"); */
+            // function(value, suit, origins, analyse, refutes)
+            /*         $.getJSON("cards.json", function(data) {
+                            console.log(data);
+                        }) */
+            /*         $(".origin").each(function(_, e) {
+                        console.log($(e).width(), $(e).height());
+                    }) */
+            /*         var hello = $(function(str) {
+                        console.log(str);
+                    })
+                    hello("nihao"); */
+    </script>
+
+    <!-- https://blog.csdn.net/aici0819/article/details/101961739 -->
+    <!--     <script type="text/javascript">
+        function indexDemo(result) {
+            console.log(result);
+        }
+    </script>
+    <script type="text/javascript" src="cards.json?callback=indexDemo"></script> -->
+    <!--     cards.json : indexDemo=({
+        "one":"1",
+        "two":"2",
+        "three":"3"
+    }) -->
+</body>
+
+</html>
